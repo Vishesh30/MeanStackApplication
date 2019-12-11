@@ -20,8 +20,12 @@ module.exports = function(router){
         }
     });
 
-    router.get('/',function(req,res){
-        res.send("Default Page");
+    router.get('/users',function(req,res){
+       
+        User.find((err,resArr)=>{
+            res.send(JSON.stringify(resArr));
+        });
+        
     });
     
     router.get('/home',function(req,res){

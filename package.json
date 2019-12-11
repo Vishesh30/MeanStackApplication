@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd ./ui && ng build",
     "start": "node server.js"
   },
   "keywords": [
@@ -19,6 +20,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.7.14",
     "morgan": "^1.9.1",
-    "nodemon": "^2.0.1"
+    "nodemon": "^2.0.1",
+    "@angular/cli": "8.3.20"
   }
 }
