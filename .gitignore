@@ -3,7 +3,6 @@ coverage/
 sap/
 $tmp-*/
 x4/
-*.js
 *.js.map
 *.log
 !options.js
