@@ -1,0 +1,25 @@
+.loginbody {
+  /* background: url('../assets/images/animated-svg.gif') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  /* background-color: #333; */
+}
+
+.title{
+  color: wheat;
+  font-size: 80px;
+  margin-left: 60%;
+}
+
+:host {
+    background: url('../../assets/images/animated-svg.gif') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: block;
+}

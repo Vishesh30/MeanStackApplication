@@ -1,0 +1,57 @@
+<script>
+  window.onLoadCallback = function () {
+    var auth2 = gapi.auth2.getAuthInstance();
+    if (auth2.isSignedIn.get()) {
+      var profile = auth2.currentUser.get().getBasicProfile();
+      console.log('ID: ' + profile.getId());
+      console.log('Full Name: ' + profile.getName());
+      console.log('Given Name: ' + profile.getGivenName());
+      console.log('Family Name: ' + profile.getFamilyName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail());
+    }
+  }
+  function onSignIn(googleUser) {
+    // Useful data for your client-side scripts:
+    var profile = googleUser.getBasicProfile();
+    console.log(" ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log('Full Name: ' + profile.getName());
+    console.log('Given Name: ' + profile.getGivenName());
+    console.log('Family Name: ' + profile.getFamilyName());
+    console.log(" Image URL: " + profile.getImageUrl());
+    console.log(" Email: " + profile.getEmail());
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log(" ID Token: " + id_token);
+
+
+  }
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+
+  function isloggedIn() {
+    var element = document.getElementsByClassName("g-signin2");
+    var islogged = gapi.auth2.getAuthInstance().isSignedIn.get();
+    if (islogged) {
+      document.getElementsByClassName("g-signin2")[0].style.display = "none";
+      document.getElementById("signoutlink").style.display = "block";
+      document.getElementsByTagName(" app-root ")[0].style.display = "block";
+    } else {
+      document.getElementsByClassName("g-signin2")[0].style.display = "block";
+      document.getElementById("signoutlink").style.display = "none";
+      document.getElementsByTagName("app-root")[0].style.display = "none";
+    }
+
+  }
+
+  //=Initialy hide the page
+  //document.addEventListener('DOMContentLoaded', function () {
+  //  document.getElementsByTagName("app-root")[0].style.display = "none";
+  //}, false);
+</script>
+<span class="title">TEST</span>
+<div class="g-signin2" data-onsuccess="onSignIn" style=" margin-left:72%; margin-top:5%; "></div>

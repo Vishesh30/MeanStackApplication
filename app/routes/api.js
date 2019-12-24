@@ -1,5 +1,6 @@
 var User = require('../models/user');
-
+var request = require('request');
+var gAuth = require('../auth/googleauth');
 
 module.exports = function(router){
     router.post('/users',function(req,res){
@@ -30,6 +31,10 @@ module.exports = function(router){
     
     router.get('/home',function(req,res){
         res.send("Home Page");
+    });
+
+    router.get('/loginUrl',function(req,res){
+        res.send(gAuth.googleUrl());
     });
 
     return router; 

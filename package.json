@@ -21,6 +21,9 @@
     "mongoose": "^5.7.14",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.1",
-    "@angular/cli": "8.3.20"
+    "@angular/cli": "8.3.20",
+    "googleapi": "1.0.2",
+    "googleapis": "46.0.0",
+    "querystringify": "2.1.1"
   }
 }
